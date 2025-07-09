@@ -6,5 +6,35 @@
 }
 /* Start global rules */
 
+.parent{
+    background-color: #eee;
+}
 
+.container{
+    padding-left: 15px;
+    padding-right: 15px;
+    margin-left: auto;
+    margin-right: auto;
+    background-color: #aaa;
+}
 
+/* Small */
+@media (min-width: 768px) {
+    .container {
+        max-width: 750px;
+    }
+}
+
+/* Medium */
+@media (min-width: 992px) {
+    .container {
+        max-width: 970px;
+    }
+}
+
+/* Larage */
+@media (min-width: 1200px) {
+    .container {
+        max-width: 1170px;
+    }
+}
