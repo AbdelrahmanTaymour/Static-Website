@@ -1,3 +1,8 @@
+/* Start Variables */
+:root {
+    --main-color: #10cab7
+}
+/* End Variables */
 /* Start global rules */
 * {
     -webkit-box-sizing: border-box;
@@ -28,6 +33,7 @@
         max-width: 1170px;
     }
 }
+
 /* End global rules */
 /* Start Header */
 .header {
@@ -73,11 +79,13 @@
     margin: 0;
     padding: 0;
     background-color: #f6f6f6;
+    font-family: "Work Sans", sans-serif;
     position: absolute;
     right: 0;
     min-width: 200px;
     top: calc(100% + 15px);
     display: none;
+    z-index: 1;
 }
 .header .links ul::before {
   content: "";
@@ -105,3 +113,32 @@
     border-bottom: 1px solid #ddd;
 }
 /* End Header */
+/* Start landing section */
+.landing{
+    background-image: url(../images/landing.jpg);
+    background-size: cover;
+    height: calc(100vh - 64px);
+}
+
+.landing .intro-text{
+    position: absolute;
+    left:50%;
+    top: 50%;
+    text-align: center;
+    transform: translate(-50%, -50%);
+    width: 320px;
+    max-width: 100%;
+}
+.landing .intro-text h1{
+    margin: 0;
+    font-family: "Work Sans", sans-serif;
+    font-weight:bold;
+    font-size: 50px;
+    color: var(--main-color);
+}
+.landing .intro-text p{
+    font-family: "Work Sans", sans-serif;
+    font-size: 18px;
+    line-height: 1.8;
+}
+/* End landing section */
