@@ -4,14 +4,17 @@
     --secondary-color: #2c4755;
     --section-padding: 60px;
     --section-background: #f6f6f6;
+    --main-duration: 0.3s;
 }
-/* End Variables */
 /* Start global rules */
 * {
     font-family: "Work Sans", sans-serif;
     -webkit-box-sizing: border-box;
     -moz-box-sizing: border-box;
     box-sizing: border-box;
+}
+html {
+    scroll-behavior: smooth;
 }
 .container{
     padding-left: 15px;
@@ -37,7 +40,6 @@
         max-width: 1170px;
     }
 }
-/* End global rules */
 /* Start Components */
 .special-heading {
     color: #ebeced;
@@ -61,7 +63,10 @@
         margin-top: -20px;
     }
 }
-/* End Components */
+.grid-3 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
 /* Start Header */
 .header {
     padding: 20px;;
@@ -72,19 +77,19 @@
     align-items: center;
 }
 .header .logo {
-  width: 60px;
+    width: 60px;
 }
 .header .links {
-  position: relative;
+    position: relative;
 }
 .header .links:hover .icon span:nth-child(2) {
-  width: 100%;
+    width: 100%;
 }
 .header .links .icon {
-  width: 30px;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: flex-end;
+    width: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-end;
 }
 .header .links .icon span{
     background-color: #333;
@@ -96,7 +101,7 @@
 }
 .header .links .icon span:nth-child(2) {
     width: 60%;
-    transition: 0.3s;
+    transition: var(--main-duration);
 }
 .header .links .icon span:last-child {
     width: 100%;
@@ -114,13 +119,13 @@
     z-index: 1;
 }
 .header .links ul::before {
-  content: "";
-  border-width: 10px;
-  border-style: solid;
-  border-color: transparent transparent #f6f6f6 transparent;
-  position: absolute;
-  right: 5px;
-  top: -20px;
+    content: "";
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent transparent #f6f6f6 transparent;
+    position: absolute;
+    right: 5px;
+    top: -20px;
 }
 .header .links:hover ul{
     display: block;
@@ -130,7 +135,7 @@
     padding: 15px;
     text-decoration: none;
     color: #333;
-    transition: 0.3s;
+    transition: var(--main-duration);
 }
 .header .links ul li a:hover{
     padding-left: 25px;
@@ -138,14 +143,12 @@
 .header .links ul li:not(:last-child) a{
     border-bottom: 1px solid #ddd;
 }
-/* End Header */
 /* Start landing section */
 .landing{
     background-image: url(../images/landing.jpg);
     background-size: cover;
     height: calc(100vh - 64px);
 }
-
 .landing .intro-text{
     position: absolute;
     left:50%;
@@ -165,7 +168,6 @@
     font-size: 18px;
     line-height: 1.8;
 }
-/* End landing section */
 /* Start Features */
 .features {
     padding-top: var(--section-padding);
@@ -173,8 +175,6 @@
     background-color:var(--section-background);
 }
 .features .container {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
 }
 .features .feat{
@@ -194,15 +194,12 @@
     color: #777;
     font-size: 17px;
 }
-/* End Features */
 /* Start Services */
 .services {
     padding-top: var(--section-padding);
     padding-bottom: var(--section-padding);
 }
 .services .services-content {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
     margin-top: 100px;
 }
@@ -253,7 +250,6 @@
 .services .services-content .image img{
     width: 260px;
 }
-/* End Services */
 /* Start portfolio */
 .portfolio {
     padding-top: var(--section-padding);
@@ -261,8 +257,6 @@
     background-color:var(--section-background)
 }
 .portfolio .portfolio-content{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 30px;
     margin-top: 80px;
 }
@@ -286,11 +280,9 @@
 }
 @media (max-width: 676px) {
     .portfolio .portfolio-content .card .info{
-        /* flex-direction: column; */
         text-align: center;
     }
 }
-/* End portfolio */
 /* Start about */
 .about{
     padding-top: var(--section-padding);
@@ -365,7 +357,6 @@
     line-height: 1.8;
     color: #777;
 }
-/* End about */
 /* Start contact */
 .contact {
     padding-top: var(--section-padding);
@@ -407,7 +398,6 @@
         font-size: 25px;
     }
 }
-/* End contact */
 /* Start footer */
 .footer{
     background-color: var(--secondary-color);
@@ -420,4 +410,3 @@
     font-weight: bold;
     color: var(--main-color);
 }
-/* End footer */
